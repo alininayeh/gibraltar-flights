@@ -1,0 +1,101 @@
+// variables
+$red: #E53935;
+$grey: #E0E0E0;
+$darkGrey: #616161;
+$green: #4CAF50;
+
+// global styles
+body {
+    margin: 0;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+// app-specific styles
+.App {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.Header {
+    align-items: center;
+    background: $red;
+    color: white;
+    display: flex;
+    height: 50px;
+    justify-content: center;
+
+    &-title {
+        font-size: 16px;
+        margin: 0;
+    }
+}
+
+.Loader {
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-name: rotateMe;
+    animation-timing-function: linear;
+    border: 5px solid white;
+    border-radius: 100%;
+    border-left-color: $red;
+    border-right-color: $red;
+    border-top-color: $red; 
+    display: block;
+    height: 50px;
+    left: 50%;
+    margin: 25px 0 0 -25px;
+    position: absolute;
+    top: 50%;
+    width: 50px;
+
+    @keyframes rotateMe {
+        from { transform: rotate(0) }
+        to { transform: rotate(360deg) }
+    }
+}
+
+.FlightDay {
+    &-title {
+        background: $grey;
+        font-size: 14px;
+        margin: 0;
+        padding: 10px;
+        text-align: center;
+    }
+}
+
+.Flight {
+    border-bottom: 1px solid $grey;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 10px;
+
+    span {
+        flex-basis: 100%;
+        padding: 5px 0;
+        text-align: center;
+    }
+
+    &-time {
+        font-size: 30px;
+    }
+
+    &-place {
+        font-size: 14px;
+    }
+
+    &-status {
+        color: $darkGrey;
+        font-size: 12px;
+
+        &.green {
+            color: $green;
+        }
+
+        &.red {
+            color: $red;
+        }
+    }
+}
