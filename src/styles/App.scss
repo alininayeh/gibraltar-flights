@@ -7,6 +7,7 @@ $green: #4CAF50;
 // global styles
 body {
     margin: 0;
+    -webkit-text-size-adjust: none;
 }
 
 * {
@@ -108,7 +109,7 @@ body {
     }
 
     &.green span {
-        opacity: 0.3;
+        opacity: 0.5;
     }
 
     &-time {
