@@ -25,6 +25,9 @@ body {
     display: flex;
     height: 50px;
     justify-content: center;
+    position: sticky;
+    top: 0;
+    z-index: 1;
 
     &-title {
         font-size: 16px;
@@ -62,20 +65,50 @@ body {
         font-size: 14px;
         margin: 0;
         padding: 10px;
+        position: sticky;
         text-align: center;
+        top: 50px;
+    }
+
+    &-flights {
+        display: flex;
+        flex-wrap: wrap;
+
+        @media (min-width: 720px) {
+            padding: 10px;
+        }
     }
 }
 
 .Flight {
     border-bottom: 1px solid $grey;
     display: flex;
+    flex-basis: 100%;
     flex-wrap: wrap;
     padding: 10px;
+
+    @media (min-width: 720px) {
+        border: 1px solid $grey;
+        flex-basis: calc(50% - 20px);
+        margin: 10px;
+    }
+
+    @media (min-width: 960px) {
+        flex-basis: calc(33.33% - 20px);
+    }
+
+    @media (min-width: 1200px) {
+        flex-basis: calc(25% - 20px);
+    }
 
     span {
         flex-basis: 100%;
         padding: 5px 0;
         text-align: center;
+    }
+
+    &.green span {
+        opacity: 0.3;
     }
 
     &-time {
@@ -90,11 +123,11 @@ body {
         color: $darkGrey;
         font-size: 12px;
 
-        &.green {
+        .green & {
             color: $green;
         }
 
-        &.red {
+        .red & {
             color: $red;
         }
     }
